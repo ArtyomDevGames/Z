@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://buerqtkoa57ed"]
+
+[ext_resource type="Script" uid="uid://cpgwpsvkwbcrc" path="res://health_bar.gd" id="1_m7ell"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.88849914, 2.2621452e-06, 1.0588765e-06, 1)
+
+[node name="HealthBar" type="ProgressBar" unique_id=850660552]
+offset_right = 4.0
+offset_bottom = 27.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_g4v7s")
+show_percentage = false
+script = ExtResource("1_m7ell")
+
+[node name="HPLabel" type="Label" parent="." unique_id=2106646274]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 1
