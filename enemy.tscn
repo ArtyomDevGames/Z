@@ -22,6 +22,7 @@ height = 150.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=7468653]
 position = Vector2(-14, -15)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_4gyqm")
 bullet_scene = ExtResource("2_qi2p4")
 
