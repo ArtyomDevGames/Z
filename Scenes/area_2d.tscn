@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bnq8f857ui7s"]
 
-[ext_resource type="Script" uid="uid://dpelhhv2sybhi" path="res://area_2d.gd" id="1_gf172"]
-[ext_resource type="PackedScene" uid="uid://chohmm5wi30qe" path="res://enemy.tscn" id="2_dl81w"]
-[ext_resource type="Script" uid="uid://bo8y14unvnnal" path="res://target_point.gd" id="3_c0nl8"]
+[ext_resource type="Script" uid="uid://dpelhhv2sybhi" path="res://Scripts/area_2d.gd" id="1_gf172"]
+[ext_resource type="PackedScene" uid="uid://chohmm5wi30qe" path="res://Scenes/enemy.tscn" id="2_dl81w"]
+[ext_resource type="Script" uid="uid://bo8y14unvnnal" path="res://Scripts/target_point.gd" id="3_c0nl8"]
 [ext_resource type="Texture2D" uid="uid://cyxde616k4igh" path="res://art/Player.png" id="4_1dtnr"]
-[ext_resource type="PackedScene" uid="uid://dgxr05hdep0j4" path="res://bullet.tscn" id="4_c33a7"]
-[ext_resource type="PackedScene" uid="uid://buerqtkoa57ed" path="res://health_bar.tscn" id="6_c33a7"]
-[ext_resource type="Script" uid="uid://brbp3cc7u8b6b" path="res://enemy_spawner.gd" id="7_oqxq1"]
+[ext_resource type="PackedScene" uid="uid://dgxr05hdep0j4" path="res://Scenes/bullet.tscn" id="4_c33a7"]
+[ext_resource type="PackedScene" uid="uid://buerqtkoa57ed" path="res://Scenes/health_bar.tscn" id="6_c33a7"]
+[ext_resource type="Script" uid="uid://brbp3cc7u8b6b" path="res://Scripts/enemy_spawner.gd" id="7_oqxq1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_57qmd"]
 animations = [{

@@ -5,7 +5,7 @@ extends Node2D
 @export var enemies_container: Node2D     # Enemies из Main
 @export var bullets_container: Node2D     # Bullets из Main
 
-@onready var spawn_timer: Timer = $SpawnTimer
+@onready var spawn_timer: Timer = $EnemySpawner/SpawnTimer
 @onready var spawn_points: Array[Marker2D] = []
 
 func _ready() -> void:
