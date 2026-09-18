@@ -20,13 +20,11 @@ func stop_spawning() -> void:
 	timer.stop()
 
 func spawn_enemy() -> void:
-	print("--- СПАВН СРАБОТАЛ! ---") # <--- ПРИНТ 1
 	var enemy = enemy_scene.instantiate()
 	enemies_container.add_child(enemy)
 	
 	var pos = _get_random_point_in_zone()
 	enemy.global_position = pos
-	print("Координаты врага: ", pos)     # <--- ПРИНТ 2
 
 	enemy.died.connect(GameManager._on_enemy_died)
 	if enemy.has_signal("reached_base"):
