@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://chohmm5wi30qe"]
 
 [ext_resource type="Script" uid="uid://d6c2636ear5u" path="res://Scripts/enemy.gd" id="1_4gyqm"]
-[ext_resource type="PackedScene" uid="uid://dgxr05hdep0j4" path="res://Scenes/bullet.tscn" id="2_qi2p4"]
 [ext_resource type="Texture2D" uid="uid://b7dpge57beswp" path="res://art/Enemy.png" id="3_qi2p4"]
-[ext_resource type="PackedScene" uid="uid://buerqtkoa57ed" path="res://Scenes/health_bar.tscn" id="4_iifgy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -23,8 +21,8 @@ height = 150.0
 [node name="Enemy" type="CharacterBody2D" unique_id=7468653]
 position = Vector2(-14, -15)
 scale = Vector2(0.3, 0.3)
+input_pickable = true
 script = ExtResource("1_4gyqm")
-bullet_scene = ExtResource("2_qi2p4")
 
 [node name="ShootTimer" type="Timer" parent="." unique_id=462403278]
 autostart = true
@@ -38,9 +36,3 @@ animation = &"StaticWalk"
 position = Vector2(14, 15)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_1dtnr")
-
-[node name="HealthBar" parent="." unique_id=850660552 instance=ExtResource("4_iifgy")]
-offset_left = 12.0
-offset_top = -62.0
-offset_right = 16.0
-offset_bottom = -35.0

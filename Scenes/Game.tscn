@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bnq8f857ui7s"]
+
+[ext_resource type="Script" uid="uid://rm62eb6eat7d" path="res://Scripts/wave_manager.gd" id="1_7lihs"]
+[ext_resource type="PackedScene" uid="uid://dordhwhpxtvwc" path="res://Scenes/turret.tscn" id="1_kldst"]
+[ext_resource type="PackedScene" uid="uid://dgxr05hdep0j4" path="res://Scenes/bullet.tscn" id="2_b2bpf"]
+[ext_resource type="Script" uid="uid://brbp3cc7u8b6b" path="res://Scripts/enemy_spawner.gd" id="3_7lihs"]
+[ext_resource type="PackedScene" uid="uid://chohmm5wi30qe" path="res://Scenes/enemy.tscn" id="4_fgofq"]
+[ext_resource type="FontFile" uid="uid://wgan2jimd4tc" path="res://Font/Inter-Bold.otf" id="5_b2bpf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(434.5, 1073)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2bpf"]
+bg_color = Color(0, 0, 0, 0.5058824)
+
+[node name="Main" type="Node2D" unique_id=625566360]
+script = ExtResource("1_7lihs")
+
+[node name="TargetPoint" parent="." unique_id=1289868340 node_paths=PackedStringArray("bullets_container") instance=ExtResource("1_kldst")]
+position = Vector2(300, 540)
+bullet_scene = ExtResource("2_b2bpf")
+bullets_container = NodePath("../Bullets")
+
+[node name="SpawnZone" type="Area2D" parent="." unique_id=1963115539]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnZone" unique_id=430378567]
+position = Vector2(2154, 540)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=1770637630 node_paths=PackedStringArray("spawn_zone", "enemies_container")]
+script = ExtResource("3_7lihs")
+enemy_scene = ExtResource("4_fgofq")
+spawn_zone = NodePath("../SpawnZone")
+enemies_container = NodePath("../Enemies")
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner" unique_id=7726490]
+wait_time = 0.2
+autostart = true
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1733318491]
+
+[node name="Bullets" type="Node2D" parent="." unique_id=1616236972]
+
+[node name="Ui" type="CanvasLayer" parent="." unique_id=1077469833]
+
+[node name="WaveTimerLabel" type="Label" parent="Ui" unique_id=752788497]
+offset_right = 1372.0
+offset_bottom = 209.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_b2bpf")
+theme_override_font_sizes/font_size = 93
+text = "00:00"
+vertical_alignment = 1
+
+[node name="ShopPanel" type="Panel" parent="Ui" unique_id=1406906413]
+process_mode = 3
+offset_left = 960.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b2bpf")
+
+[node name="UpgradeTurretBtn" type="Button" parent="Ui/ShopPanel" unique_id=1746569356]
+layout_mode = 0
+offset_top = 113.0
+offset_right = 640.0
+offset_bottom = 263.0
+
+[node name="UpgradeSniperBtn" type="Button" parent="Ui/ShopPanel" unique_id=1602283278]
+layout_mode = 0
+offset_top = 384.0
+offset_right = 640.0
+offset_bottom = 534.0
+
+[node name="NextWaveBtn" type="Button" parent="Ui/ShopPanel" unique_id=641940994]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 924.0
+offset_right = 954.0
+offset_bottom = 1074.0

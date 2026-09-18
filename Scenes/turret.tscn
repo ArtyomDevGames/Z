@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dordhwhpxtvwc"]
+
+[ext_resource type="Script" uid="uid://60fkxgtff7kn" path="res://Scripts/turret.gd" id="1_6spbj"]
+[ext_resource type="Texture2D" uid="uid://cyxde616k4igh" path="res://art/Player.png" id="3_ku01o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57qmd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ku01o")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf5fn"]
+radius = 1582.857
+height = 3165.714
+
+[node name="TargetPoint" type="Area2D" unique_id=1289868340]
+rotation = 3.1415927
+scale = Vector2(0.35, 0.35)
+script = ExtResource("1_6spbj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2001998396]
+rotation = 3.1415927
+sprite_frames = SubResource("SpriteFrames_57qmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1892026583]
+rotation = 1.5707964
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_yf5fn")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=20363668]
+wait_time = 0.8
+autostart = true
