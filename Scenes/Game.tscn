@@ -6,15 +6,22 @@
 [ext_resource type="Script" uid="uid://brbp3cc7u8b6b" path="res://Scripts/enemy_spawner.gd" id="3_7lihs"]
 [ext_resource type="PackedScene" uid="uid://chohmm5wi30qe" path="res://Scenes/enemy.tscn" id="4_fgofq"]
 [ext_resource type="FontFile" uid="uid://wgan2jimd4tc" path="res://Font/Inter-Bold.otf" id="5_b2bpf"]
+[ext_resource type="Texture2D" uid="uid://ckw6kv8b62588" path="res://art/Fon2.png" id="7_2irst"]
+[ext_resource type="Texture2D" uid="uid://cdx3upm1a5lrf" path="res://art/Fon.png" id="7_fgofq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(434.5, 1073)
+size = Vector2(396.25, 1073)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2bpf"]
 bg_color = Color(0, 0, 0, 0.5058824)
 
 [node name="Main" type="Node2D" unique_id=625566360]
 script = ExtResource("1_7lihs")
+
+[node name="Fon" type="Sprite2D" parent="." unique_id=1768196828]
+position = Vector2(964.5, 540)
+scale = Vector2(0.5028646, 0.505)
+texture = ExtResource("7_fgofq")
 
 [node name="TargetPoint" parent="." unique_id=1289868340 node_paths=PackedStringArray("bullets_container") instance=ExtResource("1_kldst")]
 position = Vector2(300, 540)
@@ -24,7 +31,7 @@ bullets_container = NodePath("../Bullets")
 [node name="SpawnZone" type="Area2D" parent="." unique_id=1963115539]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnZone" unique_id=430378567]
-position = Vector2(2154, 540)
+position = Vector2(2117, 540)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1770637630 node_paths=PackedStringArray("spawn_zone", "enemies_container")]
@@ -40,6 +47,11 @@ autostart = true
 [node name="Enemies" type="Node2D" parent="." unique_id=1733318491]
 
 [node name="Bullets" type="Node2D" parent="." unique_id=1616236972]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2119615973]
+position = Vector2(962.6667, 541.5)
+scale = Vector2(0.4986111, 0.49861112)
+texture = ExtResource("7_2irst")
 
 [node name="Ui" type="CanvasLayer" parent="." unique_id=1077469833]
 

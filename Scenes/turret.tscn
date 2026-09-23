@@ -15,8 +15,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf5fn"]
-radius = 1582.857
-height = 3165.714
+radius = 1611.4285
+height = 3222.857
 
 [node name="TargetPoint" type="Area2D" unique_id=1289868340]
 rotation = 3.1415927
